@@ -1,5 +1,6 @@
 import pygame
 
+from camera import Camera
 from player import Player
 
 
@@ -12,6 +13,7 @@ def main() -> None:
     clock = pygame.time.Clock()
     
     player = Player((600, 300))
+    camera = Camera((1280, 720))
     
     running = True
     
@@ -26,11 +28,14 @@ def main() -> None:
         
         # Update playwer position based on input and delta time
         player.update(dt)
+        
+        # Update camera position to follow the player
+        camera.update(player.position)
                 
         screen.fill((30, 100, 30))
         
         # Draw the player on the screen
-        player.draw(screen)
+        player.draw(screen, camera)
         
         pygame.display.flip()
         
