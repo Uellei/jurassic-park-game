@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "jurassick-park"
+version = "0.1.0"
+description = "2D Jurassic Park simulation game built with Python and Pygame"
+authors = ["Weslley Marcelo"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pygame-ce = "^2.5.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
